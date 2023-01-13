@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 <%@include file="nav-bar.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -65,7 +66,7 @@
     getEnrolledSubjects();
 
     function getEnrolledSubjects() {
-        const studentId = "<?php echo $studentId?>";
+        const studentId = ${id};
 
         const data = {
             "studentId": studentId

@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 
 <span id="sid" name="sid">
 </span>
@@ -131,15 +132,11 @@
         </div>
     </div>
 </div>
+<%@include file="footer.jsp" %>
 
 <script>
     // $('#update').click(function () {
     function getStudentDetails() {
         window.location.href = "${pageContext.request.contextPath}/student/update-view?id=${id}";
     }
-
-
 </script>
-
-<%@include file="footer.jsp" %>
->

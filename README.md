@@ -10,9 +10,9 @@ create database StudentManagementSystem;
 
 use StudentManagementSystem;
 
-create table admin( id double NOT NULL Auto_INCREMENT, username varchar(20) NOT NULL, password varchar(15) NOT NULL, PRIMARY KEY(id) );
+create table admin( id double NOT NULL Auto_INCREMENT, username varchar(20) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY(id) );
 
-insert into admin (username, password) values('admin', 'admin' );
+insert into admin (username, password) values('admin', '21232f297a57a5a743894a0e4a801fc3' );
 
 create table subject( name varchar(20) NOT NULL, PRIMARY KEY(name) );
 

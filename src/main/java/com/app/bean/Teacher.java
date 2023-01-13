@@ -6,6 +6,16 @@ public class Teacher implements Serializable {
    private double id;
    private String firstName;
    private String lastName;
+   private String subjectName;
+
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
 
     public double getId() {
         return id;

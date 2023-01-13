@@ -1,5 +1,5 @@
 <%@include file="header.jsp"%>
-
+<%@include file="auth.jsp" %>
 <div class="heading-name">
     <p class="heading-name-para">
         Teacher Registration Form
@@ -21,25 +21,7 @@
                             </p>
                             <div class="form-control student-id-input w-25">
                                 <span name="span" class="span" id="teacher-id">
-                                    c
-                                <!--Id Generated -->
-<%--                                    <?php--%>
-<%--                                if ($idResultCheck > 0) {--%>
-<%--                                    while ($row = mysqli_fetch_assoc($idResult)) {--%>
-<%--                                        $ids = 0;--%>
 
-<%--                                        $ids = (double)$row['id'];--%>
-<%--                                        $ids += 1;--%>
-<%--                                        if ($ids >= 1) {--%>
-
-<%--                                            echo $ids;--%>
-<%--                                        }--%>
-
-<%--                                    }--%>
-<%--                                } else {--%>
-<%--                                    echo 1;--%>
-<%--                                }--%>
-<%--                                ?>--%>
                                 </span>
                             </div>
                         </div>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -63,6 +64,20 @@ public class PaymentController {
         String message = paymentDao.pay(payment);
         return new ResponseEntity<>(new CommonResponse(200, message), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/view-payment-page", method = RequestMethod.GET)
+    public String viewPaymentDetails(Model model, @RequestParam("id") int id){
+        model.addAttribute("id", id);
+        System.out.println(id);
+        return "previous-payment";
+    }
+//
+//    @RequestMapping(value = "/view-details", method = RequestMethod.GET)
+//    @ResponseBody
+//    public PaymentDetails getDetails(@RequestParam("id") int id) {
+//
+//    }
+
 }
 
 

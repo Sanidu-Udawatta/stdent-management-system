@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 <%@include file="nav-bar.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -96,27 +97,29 @@
     </div>
 
     <div id="search-student-from">
+        <form action="${pageContext.request.contextPath}/payment/view-payment-page" method="GET">
+            <img src="<c:url value="/resources/assets/images/close.png"/>" alt="" class="close-btn"
+                 onclick="closeStudentPopUp()">
+            <p class="class-details-heading" style="margin-top: 40px">
+                Previous Payment Search </p>
 
-        <img src="<c:url value="/resources/assets/images/close.png"/>" alt="" class="close-btn"
-             onclick="closeStudentPopUp()">
-        <p class="class-details-heading" style="margin-top: 40px">
-            Previous Payment Search </p>
+            <div class="row mb-4 search-div">
+                <div class="col ">
+                    <label class="label-search">Student 's Id</label>
+                </div>
 
-        <div class="row mb-4 search-div">
-            <div class="col ">
-                <label class="label-search">Student 's Id</label>
+                <div class="col input-search">
+                    <input type="text" class="form-control" placeholder="" id="searchPreviousPaymentsStudentId" name="id">
+                </div>
             </div>
 
-            <div class="col input-search">
-                <input type="text" class="form-control" placeholder="" id="searchPreviousPaymentsStudentId">
+            <div class="row mb-2  ">
+                <div class="btn-search">
+                    <button type="submit" class="Search-btn-class" onclick="viewPreviousPaymentDetails()">Search
+                    </button>
+                </div>
             </div>
-        </div>
-
-        <div class="row mb-2  ">
-            <div class="btn-search">
-                <button type="button" class="Search-btn-class" onclick="viewPreviousPaymentDetails()">Search</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 

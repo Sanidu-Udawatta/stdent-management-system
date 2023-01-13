@@ -1,15 +1,11 @@
 package com.app.dao;
 
-import com.app.bean.Grade;
 import com.app.bean.Student;
 import com.app.bean.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -89,8 +85,6 @@ public class StudentDao {
 
     public boolean updateStudent(Student student) {
         String query = "UPDATE student SET firstName=? , lastName=?, gender=? , grade=? ,school= ?, dob=? , address=? , guardianName=?, guardianContactNo=? WHERE id=?";
-        System.out.println(student.getFirstName());
-        System.out.println(student.getLastName());
         int i = jdbcTemplate.update(query, student.getFirstName(), student.getLastName(),
                 student.getGender(), student.getGrade(), student.getSchool(), student.getDob(), student.getAddress(),
                 student.getGuardianName(), student.getContactNo(), student.getId());

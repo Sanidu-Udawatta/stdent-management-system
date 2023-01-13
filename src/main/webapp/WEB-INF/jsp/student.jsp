@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 <%@include file="nav-bar.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -65,10 +66,7 @@
                 </div>
             </div>
         </form>
-
     </div>
-
-
 </div>
 
 <script>

@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 
 <div class="heading-name">
     <p class="heading-name-para">
@@ -201,44 +202,15 @@
     </div>
 </div>
 
-<script>
 
+
+<%@include file="footer.jsp" %>
+
+<script>
     function getBackToStudentDetails() {
         window.location.href = "${pageContext.request.contextPath}/student/view-details?id=${id}";
     }
 
-    function addRow() {
-        const subject = document.getElementById("subject").value;
-        const tValue = document.getElementById("teacher");
-        const teacher = tValue.options[tValue.selectedIndex].text;
-        const day = document.getElementById("day").value;
-        const time = document.getElementById("time").value;
-
-        let today = new Date();
-        const dd = String(today.getDate()).padStart(2, '0');
-        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        const yyyy = today.getFullYear();
-        today = mm + '/' + dd + '/' + yyyy;
-
-        const table = document.getElementsByTagName('table')[0];
-
-
-        const newRow = table.insertRow(1);
-
-        const cel1 = newRow.insertCell(0);
-        const cel2 = newRow.insertCell(1);
-        const cel3 = newRow.insertCell(2);
-        const cel4 = newRow.insertCell(3);
-        const cel5 = newRow.insertCell(4);
-
-        cel1.innerHTML = subject;
-        cel2.innerHTML = teacher;
-        cel3.innerHTML = day;
-        cel4.innerHTML = time;
-        cel5.innerHTML = today;
-
-
-    }
 
     $('#add_data').click(function () {
         var subject = $('#subject').val();
@@ -503,7 +475,6 @@
             guardianName: guardianName,
             contactNo: contact
         }
-        console.log(fName);
         $.ajax({
             type: "POST",
             url: '${pageContext.request.contextPath}/student/update-student',
@@ -565,5 +536,3 @@
     })
 </script>
 
-
-<%@include file="footer.jsp" %>

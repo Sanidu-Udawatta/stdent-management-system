@@ -26,7 +26,7 @@
         </li>
       </ul>
 
-      <a href="functions/log-out.php">
+      <a href="${pageContext.request.contextPath}/logout">
         <button class="logout-btn" type="submit"> Log out </button>
       </a>
 

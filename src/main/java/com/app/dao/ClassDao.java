@@ -3,10 +3,11 @@ package com.app.dao;
 import com.app.bean.Classes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.util.List;
 
+@Repository
 public class ClassDao {
     JdbcTemplate jdbcTemplate;
 
@@ -106,6 +107,7 @@ public class ClassDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(classes);
         return classes;
     }
 }

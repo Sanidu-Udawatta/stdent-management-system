@@ -1,6 +1,6 @@
 <%@include file="header.jsp" %>
+<%@include file="auth.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 
 <div class="heading-name">
     <p class="heading-name-para">

@@ -1,9 +1,7 @@
 package com.app.dao;
-
 import com.app.bean.Teacher;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import java.sql.ResultSet;
 import java.util.List;
 

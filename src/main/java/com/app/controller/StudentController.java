@@ -12,10 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.security.auth.Subject;
-import java.sql.ResultSet;
 import java.util.List;
 
 @Controller
@@ -119,13 +120,13 @@ public class StudentController {
 
         List<Grade> gradeList = subjectDao.getGradeList();
         model.addAttribute("gradeList", gradeList);
+
         return "update-student";
 
     }
 
     @RequestMapping(value = "/update-student", method = RequestMethod.POST)
     public ResponseEntity<CommonResponse> updateStudent(@ModelAttribute("student") Student student) {
-        System.out.println(student.getFirstName());
         try {
             boolean b = studentDao.updateStudent(student);
         } catch (Exception e) {

@@ -1,10 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sanid
-  Date: 1/1/2023
-  Time: 2:42 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%
+    Object user = session.getAttribute("user");
+    if (user != null) {
+        response.sendRedirect(request.getContextPath() + "/home");
+    }
+%>
+
 <%@include file="WEB-INF/jsp/header.jsp" %>
 
 
